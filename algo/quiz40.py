@@ -1,0 +1,1 @@
+class Quiz40: pass

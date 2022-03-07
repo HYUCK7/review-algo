@@ -1,0 +1,1 @@
+class Quiz30: pass

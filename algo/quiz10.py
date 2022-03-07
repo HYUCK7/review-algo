@@ -1,0 +1,1 @@
+class Quiz10: pass
