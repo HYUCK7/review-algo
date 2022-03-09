@@ -32,5 +32,12 @@ class Quiz20:
         artists = [i.get_text() for i in artists]
         artists = [i[1:-1] for i in artists]
         #print(''.join([i for i in artists]))
-        print(''.join([i[:5] for i in artists]))
+        print(''.join([i for i in artists]))
+
+
+        print('-'*30)
+
+        musics = soup.find_all('div', {'class': 'ellipsis rank02'})
+        musics = [i.get_text() for i in musics]
+        print(''.join([i for i in musics]))
         return None

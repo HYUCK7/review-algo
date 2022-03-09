@@ -58,9 +58,8 @@ class Account(object):
 
     @staticmethod
     def find_account(ls, account_number):
-        return ''.join([j.to_string() if j.account_number == account_number else '찾는 계좌가 아닙니다.' for (i,
-                                                                                                     j) in
-                        enumerate(ls)])
+        return ''.join([j.to_string() if j.account_number == account_number
+                        else '찾는 계좌가 아닙니다.' for (i, j) in enumerate(ls)])
 
     @staticmethod
     def add_account(ls, account_number, add):
