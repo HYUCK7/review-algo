@@ -80,11 +80,11 @@ class Quiz20:
             c.add([memberlist()[myRandom(0, 23)]])
         students = list(c)
         scores = [str(my100()) for i in range(5)]
-        dict = {}
-        for i, j in zip(students, scores):
-            dict[i] = j
-
-        print(dict)
+        # dict = {}
+        # for i, j in zip(students, scores):
+        #    dict[i] = j
+        a = {i: j for i, j in zip(students, scores)}
+        print(a)
 
         return None
 
@@ -114,5 +114,28 @@ class Quiz20:
         df.to_csv('./save/bugs.csv', sep=',', na_rep='NaN')
         return None
 
-    def quiz29(self):
-        None
+    '''
+    <다음 결과 출력>
+        a   b   c
+     1  1   3   5
+     2  2   4   6   
+    '''
+
+    def quiz29_pandas_df(self) -> object:
+        """
+        (1)data = {'a': [1, 2], 'b': [3, 4], 'c': [5, 6]}
+        data = {i}
+        print(data)
+        data = pd.DataFrame(data, index=['1', '2'])
+        print(data)
+
+        (2)d2 = {"1":[1,3,5], "2":[2,4,6]}
+        df2 = pd.DataFrame.from_dict(d2, orient= 'index', columns=['a','b','c'])
+        """
+        a = []
+        b = []
+        c = [chr(i) for i in range(97, 100)]  # ['a', 'b', 'c']
+        [a.append(i) if i % 2 == 0 else b.append(i) for i in range(1, 7)]
+        dict = {'1' : b, '2': a}
+        df3 = pd.DataFrame.from_dict(dict, orient='index', columns=c)
+        print(df3)
