@@ -75,11 +75,15 @@ class Quiz20:
         # memberlist()[myRandom(0,23)] 이것이 한 명인데 5명 추출
         # scores는 0~100점 사이 랜덤
         students = [memberlist()[myRandom(0, 23)] for i in range(5)]
+        c = set(students)
+        while len(c) != 5:
+            c.add([memberlist()[myRandom(0, 23)]])
+        students = list(c)
         scores = [str(my100()) for i in range(5)]
         dict = {}
         for i, j in zip(students, scores):
             dict[i] = j
-        set(dict)
+
         print(dict)
 
         return None
