@@ -1,10 +1,10 @@
 import urllib.request
 from turtle import pd
-
 import pandas as pd
-
 from bs4 import BeautifulSoup  # bs4 = .py (module)
 from urllib.request import urlopen  # pip install urlopen, bs4, lxml
+
+from algo.domain import memberlist, myRandom, my100
 
 
 class Quiz20:
@@ -23,11 +23,15 @@ class Quiz20:
         ls2 = self.find_music(soup, 'artist')
         # self.dict1(ls1, ls2)
         # self.dict2(ls1, ls2)
-        dict = {}
+        '''dict = {}
         for i, j in zip(ls1, ls2):
-            dict[i] = j
-        print(dict)
-        return dict
+            dict[i] = j'''
+        dt = {i: j for i, j in zip(ls1, ls2)}
+        d1 = dict(zip(ls1, ls2))
+        l = [i + j for i, j in zip(ls1, ls2)]
+        l2 = list[ls1, ls2]
+        print(d1)
+        return dt
 
     @staticmethod
     def dict2(ls1, ls2) -> None:
@@ -66,6 +70,19 @@ class Quiz20:
         ls = soup.find_all('p', {'class': cls_name})
         return [j.get_text() for j in ls]
         # print(''.join(j for j in a))
+
+    def quiz25dictcom(self) -> str:
+        # memberlist()[myRandom(0,23)] 이것이 한 명인데 5명 추출
+        # scores는 0~100점 사이 랜덤
+        students = [memberlist()[myRandom(0, 23)] for i in range(5)]
+        scores = [str(my100()) for i in range(5)]
+        dict = {}
+        for i, j in zip(students, scores):
+            dict[i] = j
+        set(dict)
+        print(dict)
+
+        return None
 
     def quiz27melon(self) -> str:
         headers = {'User-Agent': 'Mozilla/5.0'}
