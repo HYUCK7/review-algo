@@ -79,7 +79,7 @@ if __name__ == '__main__':
         elif menu == '30':
             q3.quiz30_df_4_by_3()
         elif menu == '31':
-            q3.quiz31()
+            q3.quiz31_rand_2_by_3()
         elif menu == '32':
             q3.quiz32()
         elif menu == '33':

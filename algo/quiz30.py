@@ -1,6 +1,8 @@
 import pandas as pd
 from icecream import ic
 
+from algo.domain import myRandom
+
 
 class Quiz30:
     def quiz30_df_4_by_3(self):
@@ -13,8 +15,11 @@ class Quiz30:
         b = []
         c = []
         d = []
-        col = [chr(i) for i in range(32, 34)]  # ['A','B','C']
-        # [i, j]
+        col = [chr(i) for i in range(32, 35)]  # ['A','B','C']
+        [a.append(i) if i < 4 else b.append(i) for i in range(1, 7)]
+        [c.append(i) if i < 10 else d.append(i) for i in range(7, 13)]
+        dict = {'1': a, '2': b, '3': c, '4': d}
+        df = pd.DataFrame.from_dict(dict, orient='index', columns=col)
         ic(df)
 
     '''
@@ -25,8 +30,19 @@ class Quiz30:
                 1  56  83  80
     '''
 
-    def quiz31_rand_2_by_3(self) -> str:
-        return None
+    def quiz31_rand_2_by_3(self):
+        a = []
+        b = []
+        c = [i for i in range(0,3)]  # 0 , 1,  2
+
+        # myRandom()
+        # [a.append(myRandom(10,100)) for i in range(3)]
+        # [b.append(myRandom(10,100)) for i in range(3)]
+
+        [a.append(myRandom(10, 100)) if i < 3 else b.append(myRandom(10, 100)) for i in range(6)]
+        dict = {'0': a, '1': b}
+        df = pd.DataFrame.from_dict(dict, orient='index', columns=c)
+        ic(df)
 
     '''
             데이터프레임 문제 Q04.
