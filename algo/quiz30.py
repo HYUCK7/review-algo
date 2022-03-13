@@ -9,13 +9,12 @@ from algo.domain import myRandom
 
 class Quiz30:
     def quiz30_df_4_by_3(self):
-
         df = pd.DataFrame([[1, 2, 3],
                            [4, 5, 6],
                            [7, 8, 9],
                            [10, 11, 12]], index=range(1, 5), columns=['A', 'B', 'C'])
         # 위 식을 리스트 결합 형태로 분해해서 조립하시오
-        #(1)
+        # (1)
         a = []
         b = []
         c = []
@@ -54,8 +53,8 @@ class Quiz30:
         # ic(df)
 
         # (2)
-        e = [[myRandom(10,100) for i in range(3)] for j in range(2)]
-        df1 = pd.DataFrame(e, index=range(0,2), columns=c)
+        e = [[myRandom(10, 100) for i in range(3)] for j in range(2)]
+        df1 = pd.DataFrame(e, index=range(0, 2), columns=c)
         ic(df1)
 
     '''
@@ -76,10 +75,19 @@ class Quiz30:
                         GOJKU  62  17  75  49
     '''
 
-    def quiz32_df_grade(self):
-        id_make = string.ascii_uppercase
-        id = random.choice(id_make)
-        ic(id)
+    def quiz32_df_grade(self, j=None):
+        ''' id_make = [[''.join(string.ascii_uppercase)[myRandom(0, 26)] for i in range(5)] for i in range(10)]
+        # sub = ['국어', '영어', '수학', '사회']
+        # grade = [[myRandom(0, 100) for i in range(4)] for j in range(10)]
+        # df2 = pd.DataFrame(grade, index=id_make, columns=sub)
+        # ic(df2)'''
+        sub = ['kor', 'eng', 'math', 'soc']
+        arr2 = [''.join([string.ascii_letters[myRandom(0, 52)] for i in range(5)]) for i in range(10)]
+        grade = [[myRandom(0, 100) for i in range(4)] for j in range(10)]
+        dict = {arr2[0]: grade}
+        df = pd.DataFrame.from_dict(dict, orient='index', columns=sub)
+        ic(df)
+
         '''id_make = random.()string.ascii_uppercase
         #print(id_make)
         #id = random.choice(id_make)
