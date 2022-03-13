@@ -81,7 +81,7 @@ if __name__ == '__main__':
         elif menu == '31':
             q3.quiz31_rand_2_by_3()
         elif menu == '32':
-            q3.quiz32()
+            q3.quiz32_df_grade()
         elif menu == '33':
             q3.quiz33()
         elif menu == '34':
