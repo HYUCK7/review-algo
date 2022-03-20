@@ -39,16 +39,16 @@ class Dataset:
     def test(self) -> object: return self.test
 
     @test.setter
-    def test(self, test) -> object: self.test = test
+    def test(self, test) -> object: self._test = test
 
     @property
     def label(self) -> object: return self.label
 
     @label.setter
-    def label(self, label) -> object: self.label = label
+    def label(self, label) -> object: self._label = label
 
     @property
     def id(self) -> object: return self.id
 
     @id.setter
-    def id(self, id) -> object: self.id = id
+    def id(self, id) -> object: self._id = id
